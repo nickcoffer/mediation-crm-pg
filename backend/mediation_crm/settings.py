@@ -48,16 +48,16 @@ TEMPLATES = [{
     ]},
 }]
 WSGI_APPLICATION = "mediation_crm.wsgi.application"
+import dj_database_url
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "nickcoffer",
-        "USER": "nickcoffer",
-        "PASSWORD": "",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
+    "default": dj_database_url.config(
+        default="postgresql://localhost:5432/postgres",
+        conn_max_age=600,
+        ssl_require=True,
+    )
 }
+
 AUTH_PASSWORD_VALIDATORS = []
 LANGUAGE_CODE = "en-gb"
 TIME_ZONE = "Europe/London"
