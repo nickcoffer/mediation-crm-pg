@@ -91,3 +91,11 @@ CSRF_TRUSTED_ORIGINS = [
     "https://mediation-crm-v2.vercel.app"
 ]
 CORS_ALLOW_CREDENTIALS = True
+
+import os
+import dj_database_url
+
+if os.environ.get("RAILWAY"):
+    DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=False)
+
+
