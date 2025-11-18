@@ -28,12 +28,13 @@ MIDDLEWARE = [
 ]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "http://localhost:3001", 
+    "http://localhost:3001",
     "http://localhost:3002",
     "http://127.0.0.1:3000",
     "http://127.0.0.1:3001",
     "http://127.0.0.1:3002",
-    "https://mediation-crm-v2.vercel.app"
+    "https://mediation-crm-v2.vercel.app",
+    "https://mediation-crm-pg.vercel.app",
 ]
 ROOT_URLCONF = "mediation_crm.urls"
 TEMPLATES = [{
@@ -88,7 +89,8 @@ CSRF_TRUSTED_ORIGINS = [
     "http://localhost:3000",
     "http://localhost:3001",
     "http://localhost:3002",
-    "https://mediation-crm-v2.vercel.app"
+    "https://mediation-crm-v2.vercel.app",
+    "https://mediation-crm-pg.vercel.app",
 ]
 CORS_ALLOW_CREDENTIALS = True
 
