@@ -43,7 +43,7 @@ export default function TodosPage() {
   }
 
   async function handleToggleComplete(todoId: string) {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("access_token");
     if (!token) return;
 
     try {

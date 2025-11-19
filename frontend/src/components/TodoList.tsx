@@ -27,7 +27,7 @@ export default function TodoList({ caseId, onUpdate }: Props) {
   }, [caseId]);
 
   async function loadTodos() {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("access_token");
     if (!token) return;
 
     try {
@@ -47,7 +47,7 @@ export default function TodoList({ caseId, onUpdate }: Props) {
 
   async function handleAddTodo(e: React.FormEvent) {
     e.preventDefault();
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("access_token");
     if (!token) return;
 
     try {
@@ -76,7 +76,7 @@ export default function TodoList({ caseId, onUpdate }: Props) {
   }
 
   async function handleToggleComplete(todoId: string) {
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("access_token");
     if (!token) return;
 
     try {
@@ -97,7 +97,7 @@ export default function TodoList({ caseId, onUpdate }: Props) {
   async function handleDeleteTodo(todoId: string) {
     if (!confirm("Delete this to-do?")) return;
     
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("access_token");
     if (!token) return;
 
     try {

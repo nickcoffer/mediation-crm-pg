@@ -54,7 +54,7 @@ export default function SettingsPage() {
     }
     
     setSaving(true);
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("access_token");
     
     try {
       const response = await fetch(`${API_BASE}/api/auth/change-password/`, {

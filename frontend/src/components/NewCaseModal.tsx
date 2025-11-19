@@ -33,7 +33,7 @@ export default function NewCaseModal({ isOpen, onClose, onCreated }: {
     setError(null);
 
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("access_token");
       if (!token) throw new Error("No auth token");
 
       // Auto-generate a case reference, title, and default status

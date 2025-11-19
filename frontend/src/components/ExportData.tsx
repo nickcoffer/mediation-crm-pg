@@ -10,7 +10,7 @@ export default function ExportData() {
     setLoading(true);
     setError(null);
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("access_token");
       if (!token) throw new Error("No auth token");
 
       const res = await fetch(`${API_BASE}/api/cases/`, {
@@ -53,7 +53,7 @@ export default function ExportData() {
     setLoading(true);
     setError(null);
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("access_token");
       if (!token) throw new Error("No auth token");
 
       const res = await fetch(`${API_BASE}/api/cases/`, {

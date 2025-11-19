@@ -51,7 +51,7 @@ export default function QuickBookModal({
     setError(null);
     
     try {
-      const token = localStorage.getItem("token");
+      const token = localStorage.getItem("access_token");
       if (!token) throw new Error("No auth token");
 
       const startLocal = new Date(sessionDate + "T" + sessionTime + ":00");

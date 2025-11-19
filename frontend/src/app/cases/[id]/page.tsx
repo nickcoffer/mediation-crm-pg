@@ -34,7 +34,7 @@ export default function CaseDetail() {
   const pathId = pathname.split("/").pop();
 
   function refetch() {
-    const t = localStorage.getItem("token");
+    const t = localStorage.getItem("access_token");
     if (!t) {
       setError("Please login (top right)");
       return;
@@ -62,7 +62,7 @@ export default function CaseDetail() {
 
   async function handleDeleteCase() {
     setDeleting(true);
-    const token = localStorage.getItem("token");
+    const token = localStorage.getItem("access_token");
     
     try {
       const response = await fetch(`${API_BASE}/api/cases/${safeCaseId}/`, {
