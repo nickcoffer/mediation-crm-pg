@@ -20,7 +20,7 @@ export default function Kanban(){
   const [dragId, setDragId] = useState<string | null>(null);
 
   useEffect(()=>{
-    const t = localStorage.getItem("token");
+    const t = localStorage.getItem("access_token");
     if(!t){ setError("Please login first"); return; }
     setToken(t);
     fetch(`${API_BASE}/api/cases/`, { headers: { Authorization: `Bearer ${t}` } })
