@@ -1,5 +1,4 @@
-export const API_BASE = process.env.NEXT_PUBLIC_API_BASE || "http://127.0.0.1:8000";
-
+export const API_BASE = process.env.NEXT_PUBLIC_API_URL || "http://127.0.0.1:8000";
 // Auto-login with default credentials
 export async function ensureLoggedIn() {
   // Check if we're in the browser
@@ -12,7 +11,6 @@ export async function ensureLoggedIn() {
   if (existingToken) {
     return existingToken;
   }
-
   // Auto-login with default credentials
   try {
     const res = await fetch(`${API_BASE}/api/auth/jwt/create/`, {
@@ -32,7 +30,6 @@ export async function ensureLoggedIn() {
   
   return null;
 }
-
 export async function login(email: string, password: string) {
   const res = await fetch(`${API_BASE}/api/auth/jwt/create/`, {
     method: "POST",
@@ -42,7 +39,6 @@ export async function login(email: string, password: string) {
   if (!res.ok) throw new Error("Login failed");
   return res.json();
 }
-
 export async function getCases(token: string) {
   const res = await fetch(`${API_BASE}/api/cases/`, {
     headers: { Authorization: `Bearer ${token}` },
@@ -51,7 +47,6 @@ export async function getCases(token: string) {
   if (!res.ok) throw new Error("Failed to fetch cases");
   return res.json();
 }
-
 export async function getCase(id: string, token: string) {
   const res = await fetch(`${API_BASE}/api/cases/${id}/`, {
     headers: { Authorization: `Bearer ${token}` },
